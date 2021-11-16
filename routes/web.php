@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Livewire\Shop\Cart\IndexComponent as CartIndexComponent;
+use App\Http\Livewire\Shop\CheckoutComponent;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Shop\IndexComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
+
+Route::get('/', IndexComponent::class);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/cart', CartIndexComponent::class )->name('cart');
+Route::get('/checkout', CheckoutComponent::class)->name('checkout');

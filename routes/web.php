@@ -18,7 +18,7 @@ use App\Http\Livewire\Shop\IndexComponent;
 */
 
 /* Route::get('/', function () {
-    return view('welcome');
+    return view('front.index');
 }); */
 
 Route::get('/', IndexComponent::class);

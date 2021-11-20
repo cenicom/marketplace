@@ -44,6 +44,6 @@
                     ->getTotal(),2)
                 }}
         </h3>
-        <a href="{{ route'checkout' }}" class="btn btn-success">Pagar...</a>
+        <a href="{{ route('checkout') }}" class="btn btn-success">Pagar...</a>
     </div>
 </div>

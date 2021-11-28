@@ -3,29 +3,38 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
-use TCG\Voyager\Models\Role;
-use TCG\Voyager\Models\User;
 
 class UsersTableSeeder extends Seeder
 {
+
     /**
-     * Auto generated seed file.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
-        if (User::count() == 0) {
-            $role = Role::where('name', 'admin')->firstOrFail();
+        
 
-            User::create([
-                'name'           => 'Admin',
-                'email'          => 'admin@admin.com',
-                'password'       => bcrypt('password'),
-                'remember_token' => Str::random(60),
-                'role_id'        => $role->id,
-            ]);
-        }
+        \DB::table('users')->delete();
+        
+        \DB::table('users')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'role_id' => 1,
+                'name' => 'luis eduardo gonzalez vargas',
+                'email' => 'luedgova1967@gmail.com',
+                'avatar' => 'users/default.png',
+                'email_verified_at' => NULL,
+                'password' => '$2y$10$lUzFcZJsb0pCmhs7W4.80OaILLEpTUhWRGvHekCtueeEQFfCJGN8q',
+                'remember_token' => 'xNsRx2XjmEQdoCDPPCsXroITVJPbaj0ZpQ2bXVf6Q5yXOi7XHu7YLjgj31xI',
+                'settings' => NULL,
+                'created_at' => '2021-11-16 22:13:02',
+                'updated_at' => '2021-11-24 10:25:32',
+            ),
+        ));
+        
+        
     }
 }

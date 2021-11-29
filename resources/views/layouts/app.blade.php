@@ -44,9 +44,11 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li> --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register.shop') }}">
+                                Registrar mi Tienda
+                            </a>
+                        </li>
                         @livewire('shop.cart-component')
                         <!-- Authentication Links -->
                         @guest

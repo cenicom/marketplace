@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\PaypalController;
-use App\Http\Livewire\Shop\Cart\IndexComponent as CartIndexComponent;
-use App\Http\Livewire\Shop\CheckoutComponent;
+use App\PaypalCheckout;
+use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaypalController;
 use App\Http\Livewire\Shop\IndexComponent;
-use App\PaypalCheckout;
+use App\Http\Livewire\Shop\CheckoutComponent;
+use App\Http\Livewire\Shop\Cart\IndexComponent as CartIndexComponent;
+use App\Http\Livewire\Shop\RegisterComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +41,8 @@ Route::get('paypal-success/{order}',[PaypalController::class,'getExpressCheckout
 Route::get('paypal-cancel',[PaypalController::class,'cancelPage'])
 ->name('paypal.cancel');
 
+Route::get('register-shop', RegisterComponent::class)
+->name('register.shop');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
